@@ -1,0 +1,94 @@
+:root {
+  --navy: #0b1f3a;
+  --blue: #0891d1;
+  --green: #22b455;
+  --pink: #ec2f7c;
+  --purple: #6d28d9;
+  --light: #f4f8fc;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: "Segoe UI", Arial, sans-serif; line-height: 1.6; color: #1f2937; }
+
+/* Navbar */
+.navbar {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+  padding: 10px 40px; background: var(--navy); color: #fff;
+  position: sticky; top: 0; z-index: 10;
+}
+.brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-size: 1.3rem; }
+.brand b { color: var(--green); }
+.logo-img { height: 46px; width: 46px; border-radius: 50%; background: #fff; transition: transform 0.4s; }
+.brand:hover .logo-img { transform: rotate(360deg); }
+.navbar nav a {
+  color: #fff; text-decoration: none; margin-left: 22px; padding-bottom: 3px;
+  border-bottom: 2px solid transparent; transition: color 0.3s, border-color 0.3s;
+}
+.navbar nav a:hover { color: var(--green); border-color: var(--pink); }
+
+/* Hero */
+.hero {
+  text-align: center; padding: 90px 20px; color: #fff;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 45%, var(--purple) 75%, var(--pink) 100%);
+}
+.hero-logo { width: 130px; height: 130px; border-radius: 50%; background: #fff; margin-bottom: 18px; transition: transform 0.4s; }
+.hero-logo:hover { transform: scale(1.08) rotate(6deg); }
+.tag { text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; opacity: 0.9; }
+.hero h1 { font-size: 3rem; margin: 12px 0; }
+.sub { max-width: 620px; margin: 0 auto; }
+.btn {
+  display: inline-block; margin-top: 24px; padding: 12px 30px;
+  background: #fff; color: var(--navy); border-radius: 30px;
+  text-decoration: none; font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
+}
+.btn:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); background: var(--green); color: #fff; }
+
+/* Stats */
+.stats { display: flex; justify-content: center; gap: 60px; padding: 40px 20px; background: var(--light); text-align: center; }
+.stat h3 { font-size: 2.2rem; color: var(--blue); }
+
+/* Sections */
+.section { padding: 70px 40px; text-align: center; }
+.section.alt { background: var(--light); }
+.section h2 { font-size: 2rem; margin-bottom: 14px; color: var(--navy); }
+.lead { max-width: 720px; margin: 0 auto; }
+
+/* Cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; margin-top: 30px; }
+.card {
+  padding: 28px; border-radius: 14px; background: #fff;
+  border: 1px solid #e5e7eb; border-top: 4px solid var(--blue);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s, border-top-color 0.3s;
+}
+.card:hover { transform: translateY(-8px); box-shadow: 0 12px 28px rgba(8,145,209,0.25); border-top-color: var(--pink); }
+.icon { font-size: 2rem; margin-bottom: 8px; }
+.badge {
+  display: inline-block; font-size: 0.75rem; padding: 3px 12px; margin-bottom: 10px;
+  border-radius: 20px; background: #dbeafe; color: var(--navy);
+}
+.badge.new { background: #fce7f3; color: var(--pink); }
+.upcoming { border: 2px dashed var(--pink); border-top: 4px solid var(--pink); }
+
+/* Call to action */
+.cta { text-align: center; padding: 60px 20px; background: var(--navy); color: #fff; }
+.cta p { margin-top: 6px; opacity: 0.85; }
+
+/* Footer */
+footer { text-align: center; padding: 30px 20px; background: #06132a; color: #d1d5db; }
+footer a { color: var(--green); text-decoration: none; transition: opacity 0.3s; }
+footer a:hover { opacity: 0.7; }
+.copy { margin-top: 10px; font-size: 0.85rem; opacity: 0.7; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar { flex-direction: column; gap: 8px; padding: 12px 16px; }
+  .navbar nav a { margin: 0 8px; font-size: 0.9rem; }
+  .hero { padding: 60px 16px; }
+  .hero h1 { font-size: 2rem; }
+  .hero-logo { width: 100px; height: 100px; }
+  .stats { flex-direction: column; gap: 20px; }
+  .section { padding: 50px 20px; }
+}
